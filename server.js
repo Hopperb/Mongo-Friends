@@ -3,7 +3,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
-const friendController = './friends/friendController'
+const friendController = require('./friends/friendController');
 
 const server = express();
 
@@ -15,10 +15,10 @@ server.get('/', (req, res) => {
   res.status(200).json({ api: 'running' });
 });
 
-server.use('/api/friends', friendController)
+server.use('/api/friends', friendController);
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/dbfriends', {}, (err) => {
+mongoose.connect('mongodb://localhost/friends', {}, (err) => {
   if (err) console.log(err);
   console.log('Mongoose connected to Database server')
 });

@@ -10,9 +10,11 @@ const FriendSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    age: {
-        type: number,
-        required: true
+    age: { 
+        type: Number, 
+        required: true, 
+        min: [ 1 ], 
+        max: [ 120 ] 
     },
     createdOn: {
         type: Date,
