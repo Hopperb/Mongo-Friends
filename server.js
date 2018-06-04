@@ -18,7 +18,7 @@ server.get('/', (req, res) => {
 server.use('/api/friends', friendController)
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/friends', {}, (err) => {
+mongoose.connect('mongodb://localhost/dbfriends', {}, (err) => {
   if (err) console.log(err);
   console.log('Mongoose connected to Database server')
 });
