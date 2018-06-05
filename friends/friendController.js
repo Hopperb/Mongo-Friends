@@ -52,7 +52,7 @@ router
     })
     .put((req, res ) => {
         const {id} = req.params;
-        const updated = ({firstName, lastName, age} = req.body);
+        const updated = ({firstName, lastName, age, contactInfo} = req.body);
         Friend.findByIdAndUpdate(id, updated, {new: true})
             .then(friendUpdated => {
                 if(friendUpdated === null){

@@ -21,6 +21,11 @@ const FriendSchema = new mongoose.Schema({
     createdOn: {
         type: Date,
         default: Date.now()
+    }, 
+    contactInfo: {
+        type: String,
+        required: true,
+        trim: true,
     }
 })
 
